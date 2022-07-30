@@ -112,7 +112,7 @@
 - (GRPCCallOptions *)getCallOptionsWithHeaders:(NSDictionary *)headers {
     GRPCMutableCallOptions *options = [[GRPCMutableCallOptions alloc] init];
     options.initialMetadata = headers;
-    options.transport = self.grpcInsecure ? GRPCDefaultTransportImplList.core_insecure : GRPCDefaultTransportImplList.core_secure;
+    options.transport = GRPCDefaultTransportImplList.core_insecure; //self.grpcInsecure ? GRPCDefaultTransportImplList.core_insecure : GRPCDefaultTransportImplList.core_secure;
 
     return options;
 }
